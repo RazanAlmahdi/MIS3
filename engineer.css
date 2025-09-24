@@ -1,0 +1,213 @@
+/* Dashboard container */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  
+}
+/* Header adjustments for home page style */
+header { 
+
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  color: #363636;
+  padding: 0.75rem 1rem;
+  /* box-shadow: 0 2px 6px rgba(0,0,0,0.2); */
+}
+
+header img {
+  width: 50px; /* already small, can keep */
+  height: 50px;
+  margin-right: 1rem;
+}
+
+header .dashboard-title {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+header .dashboard-subtitle {
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 400;
+  color: #d1d9f0;
+}
+
+.logged-in-as {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-right: 1rem;
+}
+
+
+#logout-btn {
+  background-color: #7CBD52;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#logout-btn:hover {
+  background-color:#689d44;
+}
+
+/* Filter menu */
+.filter-menu {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.filter-menu button {
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  background-color: #DAE2EB;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-menu button.active {
+  background-color: #7CBD52; /* match home page green */
+  color: #fff;
+}
+
+
+/* Task list and cards */
+.task-list {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.task-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.task-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* softer shadow like home page */
+  padding: 1rem;
+  min-width: 280px;
+  border: none; /* remove inner border for clean look */
+  flex-shrink: 0;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.task-header h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.task-status {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.status-not_started { background-color: #eaf1fb; color: #1a73e8; }
+.status-in_progress { background-color: #fff3e0; color: #ff9800; }
+.status-completed { background-color: #e8f5e9; color: #4caf50; }
+.status-overdue { background-color: #fcebeb; color: #f44336; }
+
+.task-details {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.task-actions button {
+  background-color: #7CBD52;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.3s;
+}
+
+.task-actions button:hover {
+  background-color: #689d44;
+}
+
+/* Footer */
+footer {
+ 
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
+
+/* small helper to mimic the Tailwind utilities used on #tl-name */
+.logged-in-as {
+  display: inline-block;               /* inline-block so padding works */
+  padding: 0.5rem 1rem;                /* py-2 px-4 */
+  background: #e5e7eb;                 /* bg-gray-200 */
+  color: #1f2937;                      /* text-gray-800 */
+  border-radius: 0.5rem;               /* rounded-lg */
+  font-weight: 500;                    /* font-medium */
+  font-size: 0.875rem;                 /* text-sm */
+  text-align: center;                  /* text-center */
+}
+
+/* Header text */
+.header h1 {
+  margin: 0;
+  color:#141414;
+  font-weight: 700;        /* bold */
+  font-size: 1.8rem;
+}
+
+.header p {
+  margin: 0.25rem 0 0 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #141414;          /* lighter subtitle */
+}
+
+/* Task card project names */
+.task-card h3 {
+  font-weight: 700;        /* bold */
+  font-size: 1.1rem;
+  margin: 0;
+  color: #273E76;          /* navy like TL dashboard */
+}
+
+/* Optional: make task details bold for key fields */
+.task-details p strong {
+  font-weight: 700;
+}

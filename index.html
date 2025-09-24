@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIS Service Portal</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="card">
+    <img src="assets/mislogo.png" alt="Company Logo" class="logo">
+    <h2 class="card-title">MIS Service Portal</h2>
+
+    <!-- Login Form Only -->
+    <form id="login-form" class="active">
+      <div class="form-group">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" placeholder="********" required>
+      </div>
+      <button type="submit" class="btn-primary">Log in</button>
+      <p id="login-message" class="message"></p>
+    </form>
+  </div>
+
+  <footer class="footer">
+    &copy; 2025 Developed by Razan Almahdi.
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>

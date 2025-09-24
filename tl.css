@@ -1,0 +1,211 @@
+/* Dashboard container */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+}
+
+/* Header */
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff; /* Dark blue */
+  color: #545454;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.header p {
+  margin: 0.25rem 0 0 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #636363; /* lighter text for subtitle */
+}
+
+
+.logout-btn {
+  background-color: #7CBD52;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #689c45;
+}
+
+/* Section container */
+.section-container {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: center;
+}
+
+/* Requests section */
+.requests-section {
+  flex: 1 1 400px;
+  background-color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.requests-section h2 {
+  font-weight: 700; /* bold */
+  font-size: 1.25rem; /* 20px, looks good for section headers */
+  margin-bottom: 1rem;
+  color: #007bff; /* you already had this */
+}
+
+/* Card list */
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Request card */
+.request-card {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.request-card h3 {
+  font-weight: 700;  /* bold */
+  font-size: 1.1rem; /* slightly bigger than body text */
+  margin: 0;
+  color: #273E76; /* matches your header branding */
+}
+
+.request-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.request-status {
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.status-new {
+  background-color: #28a745;
+}
+
+.status-inprogress {
+  background-color: #ffc107;
+}
+
+.request-details p {
+  margin: 0.2rem 0;
+}
+
+.card-actions {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.card-actions button {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.card-actions .btn-approve {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.card-actions .btn-approve:hover {
+  background-color: #218838;
+}
+
+.card-actions .btn-decline {
+  background-color: #848A97;
+  color: #fff;
+}
+
+.card-actions .btn-decline:hover {
+  background-color: #6e7480;
+}
+
+/* Engineer assign section */
+.engineer-assign {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.engineer-assign label {
+  font-weight: 600;
+}
+
+.engineer-assign select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.engineer-assign button {
+  align-self: flex-start;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  background-color: #7CBD52;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.engineer-assign button:hover {
+  background-color: #517a35;
+}
+
+/* Footer */
+footer {
+  background-color: #ffffff;
+  color: #666;
+  text-align: center;
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
+}
+/* small helper to mimic the Tailwind utilities used on #tl-name */
+.logged-in-as {
+  display: inline-block;               /* inline-block so padding works */
+  padding: 0.5rem 1rem;                /* py-2 px-4 */
+  background: #e5e7eb;                 /* bg-gray-200 */
+  color: #1f2937;                      /* text-gray-800 */
+  border-radius: 0.5rem;               /* rounded-lg */
+  font-weight: 500;                    /* font-medium */
+  font-size: 0.875rem;                 /* text-sm */
+  text-align: center;                  /* text-center */
+}

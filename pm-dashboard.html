@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Manager Dashboard</title>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="pm.css">
+
+  <!-- Tailwind CSS for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Inter font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body class="flex flex-col min-h-screen bg-gray-50 font-inter">
+  <!-- Header -->
+  <header class="w-full bg-white shadow-md px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <!-- Logo -->
+      <img src="assets/mislogo.png" alt="Company Logo" class="w-10 h-10 object-contain">
+      <div>
+        <h1 class="text-2xl font-bold text-gray-800">Project Manager Dashboard</h1>
+        <p class="text-gray-500 text-sm">Manage department services and create service requests for your team</p>
+      </div>
+    </div>
+  
+    <!-- Header right side -->
+<div class="header-right flex items-center gap-2">
+    <div id="user-info" class="logged-in-as px-4 py-2 bg-gray-200 text-gray-800 rounded-lg font-medium text-sm text-center">
+        <!-- Filled dynamically via JS -->
+    </div>
+    <button id="logout-btn" class="px-4 py-2 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition">
+      Logout
+    </button>
+</div>
+
+  </header>
+
+  <!-- Body -->
+  <main class="flex-1 px-6 py-6">
+    <div class="dashboard-container grid grid-cols-1 lg:grid-cols-3 gap-6">
+      
+      <!-- Left: Available Services (2/3 width) -->
+      <div class="main-content lg:col-span-2 bg-white rounded-xl shadow p-6">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Available Services</h2>
+        <div id="department-menu" class="flex flex-wrap gap-2 mb-6">
+          <button data-filter="all" 
+          
+            class="px-4 py-2 rounded-full font-semibold transition-colors duration-200 bg-green-600 text-white shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 active">
+            All Services
+          </button>
+        </div>
+        <div id="services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Service cards inserted dynamically -->
+        </div>
+      </div>
+
+      <!-- Right: Request Form (1/3 width) -->
+      <aside class="sidebar bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-6 flex items-center gap-2">
+          <i class="fas fa-plus-circle text-blue-500"></i> Create Service Request
+        </h2>
+        <form id="service-request-form" class="space-y-6">
+          <!-- Service Select Dropdown -->
+          <div>
+            <label for="service-select" class="block text-sm font-medium text-gray-700 mb-1">Service</label>
+         <select id="service-select" name="services" multiple required
+  class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+</select>
+<p class="text-sm text-gray-500 mt-1">Hold Ctrl (Windows) or Cmd (Mac) to select multiple services.</p>
+
+          </div>
+
+          <!-- Project Name -->
+          <div>
+            <label for="project-name" class="block text-sm font-medium text-gray-700 mb-1">Project Name</label>
+            <input type="text" id="project-name" name="projectName" required
+              class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+          </div>
+
+          <!-- Specifications -->
+          <div>
+            <label for="specifications" class="block text-sm font-medium text-gray-700 mb-1">Specifications</label>
+            <textarea id="specifications" name="specifications" rows="4" required
+              class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Deadline -->
+            <div>
+              <label for="deadline" class="block text-sm font-medium text-gray-700 mb-1">Deadline</label>
+              <input type="date" id="deadline" name="deadline" required
+                class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+          
+            <!-- Priority -->
+            <div>
+              <label for="priority" class="block text-sm font-medium text-gray-700 mb-1">Priority</label>
+              <select id="priority" name="priority" required
+                class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                <option value="">Select a priority</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Budget -->
+          <!-- <div>
+            <label for="budget" class="block text-sm font-medium text-gray-700 mb-1">Budget ($)</label>
+            <input type="number" id="budget" name="budget" step="0.01" min="0" required
+              class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+          </div> -->
+
+          <!-- Submit Button -->
+          <div class="flex justify-center">
+            <button type="submit"
+          
+              class="w-full px-6 py-2 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition duration-200">
+              Submit Request
+            </button>
+          </div>
+          
+          <!-- Message area for feedback -->
+          <div id="message" class="text-center mt-4 text-sm font-medium"></div>
+        </form>
+      </aside>
+    </div>
+  </main>
+
+ <footer class="footer">
+    &copy; 2025 Developed by Razan Almahdi.
+  </footer>
+ <!-- Link your new JS file -->
+  <script type="module" src="pm.js"></script>
+</body>
+</html>

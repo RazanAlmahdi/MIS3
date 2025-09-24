@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineer Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link rel="stylesheet" href="engineer.css">
+  <!-- Tailwind CSS for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Inter font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+<div class="dashboard-container">
+<header class="header w-full flex justify-between items-center px-6 py-4">
+  <div class="flex items-center gap-4">
+    <!-- Logo on the far left -->
+    <img src="assets/mislogo.png" alt="Company Logo" class="w-12 h-12 object-contain">
+
+    <!-- Title and Subtitle stacked -->
+    <div class="flex flex-col">
+      <h1 class="text-2xl font-bold text-white">Engineer Dashboard</h1>
+      <p class="text-sm text-gray-200">Manage assigned tasks and deadlines</p>
+    </div>
+  </div>
+
+  <div class="flex items-center gap-2 ml-auto">
+    <div id="user-info" class="logged-in-as">
+      Logged in as: <span id="tl-name">...</span>
+    </div>
+    <button class="logout-btn" id="logout-btn">Logout</button>
+  </div>
+</header>
+
+
+
+    <div class="filter-menu">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="not_started">Not Started</button>
+        <button class="filter-btn" data-filter="in_progress">In Progress</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+        <button class="filter-btn" data-filter="overdue">Overdue</button>
+    </div>
+
+    <div class="task-list" id="task-list">
+        <!-- Tasks will be loaded dynamically -->
+    </div>
+</div>
+<footer>
+  &copy; 2025 Developed by Razan Almahdi.
+</footer>
+ <!-- Link your new JS file -->
+  <script  src="eng.js"></script>
+</body>
+
+
+</html>

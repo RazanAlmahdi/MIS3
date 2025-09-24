@@ -1,0 +1,74 @@
+/* Dashboard container with subtle gradient background
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180deg, #f3f4f6 0%, #e5e7eb 100%);
+}
+
+/* Main flex container for 2 columns */
+/* .dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+} */
+
+@media (min-width: 1024px) {
+    .dashboard-container {
+        flex-direction: row;
+    }
+}
+
+/* Service cards */
+.service-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 1.5rem;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Service tag */
+.service-tag {
+    background-color: #e6f7ff;
+    color: #1890ff;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Buttons */
+button, select, input, textarea {
+    transition: all 0.2s;
+}
+
+/* Sidebar styling */
+.sidebar {
+    flex: 1;
+    min-width: 350px;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    padding: 2rem;
+}
+
+
+.footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
